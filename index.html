@@ -1,10 +1,3 @@
-<head>
-<meta charset="UTF-8">
-	<link rel="icon" href="https://raw.githubusercontent.com/altilunium/md/main/r/logo.png" type="image/x-icon">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GLAM counter</title>
-</head>
-<body>
 
 <form id="ff">
 	<input id="osm" placeholder="Masukkan username OSM" required></input>
@@ -12,7 +5,7 @@
 </form>
 <div id="placebo"></div>
 <div id="nyaa">___</div>
-</body>
+
 
 
 <script>
@@ -91,8 +84,14 @@ fetch(uri, {method:'POST', body:q,}).then(data => {
             		var id = x[i].parentNode.getAttribute("id")
             		var ty = x[i].parentNode.tagName
             		var u = "https://www.openstreetmap.org/"+ty+"/"+id
-           
-            		theString = theString + "<a href="+u+">"+x[i].getAttribute("v")+"</a>"+ "<br>"
+           			
+           			var code = "* {{" + ty+"|"+id+"|"+x[i].getAttribute("v")+"}}"
+           			//theString = theString + code +"<br>"
+            		//theString = theString + "<a href="+u+">"+x[i].getAttribute("v")+"</a>"+ code+ "<br>"
+            		theString = theString + "<a href="+u+">"+code+"</a><br>"
+            		
+            		
+
             		isYes=true
             		counter = counter + 1
 
